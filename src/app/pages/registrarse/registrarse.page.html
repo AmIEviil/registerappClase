@@ -1,0 +1,61 @@
+<!--<ion-header>
+  
+</ion-header>-->
+
+<ion-content>
+
+  <!--BARRA DE MENU-->
+  <mat-toolbar color="primary">
+    <mat-toolbar-row class="barra-menu">
+
+
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <span>RegistrAPP</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+  <!--BARRA PARA CAMBIAR DE PAGINA?-->
+  <!--<mat-tab-group>
+    <mat-tab label="Opcion 1"> Primera</mat-tab>
+    <mat-tab label="Opcion 2"> Segunda </mat-tab>
+    <mat-tab label="Opcion 3"> Tercera </mat-tab>
+  </mat-tab-group>-->
+
+  <ion-toolbar class="titulo1">
+    <ion-title class="titulo">Iniciar sesion</ion-title>
+  </ion-toolbar>
+
+  
+  <form class="formulario-ingreso">
+    <mat-form-field class="cajas-input" appearance="fill">
+      <mat-label>Usuario</mat-label>
+      <input matInput placeholder="" value="">
+    </mat-form-field>
+
+    <mat-form-field class="cajas-input" appearance="fill">
+      <mat-label>Contraseña</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+   
+    <div class="ingresar-info">
+      <button class="boton-ingresar" mat-raised-button matTooltip="Info about the action"
+        aria-label="Button that displays a tooltip when focused or hovered over">
+        Ingresar
+      </button>
+    </div>
+    <!--<mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>-->
+  </form>
+
+</ion-content>
