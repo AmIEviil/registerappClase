@@ -11,5 +11,4 @@ export class LogueoProfesorPage implements OnInit {
 
   ngOnInit() {
   }
-
 }

@@ -1,9 +1,55 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>escanearQR</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!--<ion-header>
+  
+</ion-header>-->
 
 <ion-content>
+
+  <!--BARRA DE MENU-->
+  <mat-toolbar color="primary">
+    <mat-toolbar-row class="barra-menu">
+
+
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <ion-icon routerLink="/logueo-profesor" name="chevron-back-outline"></ion-icon>
+      </button>
+
+      <span>RegistrAPP</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+  <!--BARRA PARA CAMBIAR DE PAGINA?-->
+  <!--<mat-tab-group>
+    <mat-tab label="Opcion 1"> Primera</mat-tab>
+    <mat-tab label="Opcion 2"> Segunda </mat-tab>
+    <mat-tab label="Opcion 3"> Tercera </mat-tab>
+  </mat-tab-group>-->
+
+  <ion-toolbar class="titulo1">
+    <ion-title class="titulo">Escanear QR</ion-title>
+  </ion-toolbar>
+
+
+  <!------------------------------------------------->
+
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="asis">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>Asistencias</ion-label>
+        <ion-badge>1</ion-badge>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/logueo-profesor" tab="crear-qr">
+        <ion-icon name="camera"></ion-icon>
+        <ion-label>Escanear QR</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="perfil">
+        <ion-icon name="person-circle"></ion-icon>
+        <ion-label>Perfil</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
 
 </ion-content>

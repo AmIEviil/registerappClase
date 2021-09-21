@@ -31,12 +31,24 @@
     <ion-title class="titulo">Seleccione tipo <br> usuario</ion-title>
   </ion-toolbar>
 
-  <form class="formulario-ingreso">
-    <ion-label>Iniciar Sesion <br>Estudiante</ion-label><br>
-    <ion-button color="primary" (click)='irlogueoAlumno()'>ESTUDIANTE</ion-button> <br>
-    <ion-label>Iniciar Sesion <br>Docente</ion-label><br>
-    <ion-button color="danger" (click)='irlogueoProfesor()'>DOCENTE</ion-button>
-  </form>
+  <div class="centrarformu">
+    <div>
+      <ion-label class="agrandar">Iniciar Sesion Estudiante</ion-label><br>
+      <ion-button class="centrar-boton" color="primary" (click)='irlogueoAlumno()'>ESTUDIANTE</ion-button> <br>
+    </div>
+    
+    
+    <div class="separar-div">
+      <ion-label class="agrandar" >Iniciar Sesion Docente</ion-label><br>
+      <ion-button class="centrar-boton" color="danger" (click)='irlogueoProfesor()'>DOCENTE</ion-button>
+    </div>
+
+  </div>
+ 
 
 
 </ion-content>
+
+
+<div>
+</div>
