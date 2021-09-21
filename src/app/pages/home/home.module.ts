@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
+import { HomePage } from './home.page';
 
-import { RegistrarsePageRoutingModule } from './registrarse-routing.module';
-
-import { RegistrarsePage } from './registrarse.page';
+import { HomePageRoutingModule } from './home-routing.module';
 import { AppModuleModule } from 'src/app/app-module.module';
 
 @NgModule({
@@ -14,9 +12,9 @@ import { AppModuleModule } from 'src/app/app-module.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    RegistrarsePageRoutingModule,
+    HomePageRoutingModule,
     AppModuleModule
   ],
-  declarations: [RegistrarsePage]
+  declarations: [HomePage]
 })
-export class RegistrarsePageModule {}
+export class HomePageModule {}

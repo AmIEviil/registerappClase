@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
@@ -12,8 +12,28 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'registrarse',
-    loadChildren: () => import('./pages/registrarse/registrarse.module').then( m => m.RegistrarsePageModule)
+    path: 'logueo-alumno',
+    loadChildren: () => import('./pages/logueo-alumno/logueo-alumno.module').then( m => m.LogueoAlumnoPageModule)
+  },
+  {
+    path: 'logueo-profesor',
+    loadChildren: () => import('./pages/logueo-profesor/logueo-profesor.module').then( m => m.LogueoProfesorPageModule)
+  },
+  {
+    path: 'perfil-alumno',
+    loadChildren: () => import('./pages/perfil-alumno/perfil-alumno.module').then( m => m.PerfilAlumnoPageModule)
+  },
+  {
+    path: 'perfil-profesor',
+    loadChildren: () => import('./pages/perfil-profesor/perfil-profesor.module').then( m => m.PerfilProfesorPageModule)
+  },
+  {
+    path: 'crear-qr',
+    loadChildren: () => import('./pages/crear-qr/crear-qr.module').then( m => m.CrearQRPageModule)
+  },
+  {
+    path: 'escanear-qr',
+    loadChildren: () => import('./pages/escanear-qr/escanear-qr.module').then( m => m.EscanearQRPageModule)
   },
 ];
 

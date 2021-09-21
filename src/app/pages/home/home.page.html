@@ -1,0 +1,42 @@
+<!--<ion-header>
+  
+</ion-header>-->
+
+
+
+<ion-content>
+
+  <!--BARRA DE MENU-->
+  <mat-toolbar color="primary">
+    <mat-toolbar-row class="barra-menu">
+
+
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <span>RegistrAPP</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+  <!--BARRA PARA CAMBIAR DE PAGINA?-->
+  <!--<mat-tab-group>
+    <mat-tab label="Opcion 1"> Primera</mat-tab>
+    <mat-tab label="Opcion 2"> Segunda </mat-tab>
+    <mat-tab label="Opcion 3"> Tercera </mat-tab>
+  </mat-tab-group>-->
+
+  <ion-toolbar class="titulo1">
+    <ion-title class="titulo">Seleccione tipo <br> usuario</ion-title>
+  </ion-toolbar>
+
+  <form class="formulario-ingreso">
+    <ion-label>Iniciar Sesion <br>Estudiante</ion-label><br>
+    <ion-button color="primary" (click)='irlogueoAlumno()'>ESTUDIANTE</ion-button> <br>
+    <ion-label>Iniciar Sesion <br>Docente</ion-label><br>
+    <ion-button color="danger" (click)='irlogueoProfesor()'>DOCENTE</ion-button>
+  </form>
+
+
+</ion-content>
