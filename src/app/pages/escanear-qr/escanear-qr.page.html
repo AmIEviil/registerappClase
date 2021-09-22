@@ -9,11 +9,13 @@
     <mat-toolbar-row class="barra-menu">
 
 
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <ion-icon routerLink="/logueo-profesor" name="chevron-back-outline"></ion-icon>
-      </button>
+      
+      <ion-tab-button class="color-volver" routerLink="/logueo-alumno" tab="schedule">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-tab-button>
 
-      <span>RegistrAPP</span>
+
+      <span class="espacio-barra">RegistrAPP</span>
     </mat-toolbar-row>
   </mat-toolbar>
 
@@ -40,7 +42,7 @@
         <ion-label>Asistencias</ion-label>
         <ion-badge>1</ion-badge>
       </ion-tab-button>
-      <ion-tab-button routerLink="/logueo-profesor" tab="crear-qr">
+      <ion-tab-button routerLink="/escanear-qr" tab="crear-qr">
         <ion-icon name="camera"></ion-icon>
         <ion-label>Escanear QR</ion-label>
       </ion-tab-button>

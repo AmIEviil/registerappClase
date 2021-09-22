@@ -8,7 +8,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
   styleUrls: ['./crear-qr.page.scss'],
 })
 export class CrearQRPage implements OnInit {
-  qrData = "https://memegenerator.net/instance/20680770/willy-wonka-nico-es-gay-dime-que-se-siente-ser-gay" ;
+  qrData = "www.instagram.com" ;
   elementType : 'url'  |  'img'  |  'canvas'  =  'canvas'
   constructor(private barcodeScanner  :BarcodeScanner) { }
 

@@ -27,22 +27,20 @@
     <mat-tab label="Opcion 3"> Tercera </mat-tab>
   </mat-tab-group>-->
 
-  <ion-toolbar class="titulo1">
-    <ion-title class="titulo">Generando QR</ion-title>
-  </ion-toolbar>
+  
 
 
 
   <ion-header>
-    <ion-toolbar>
-      <ion-title>codigoQR</ion-title>
+    <ion-toolbar class="titulo1">
+      <ion-title class="titulo">Generando QR</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
-    <ion-card *ngIf="qrData">
-      <ngx-qrcode [elementType]='elementType' [value]='qrData'></ngx-qrcode>
-      <ion-input type="text" placeholder="Ingrese Direccion" [(ngModel)]="qrData"></ion-input>
+  <ion-content class="clase-qr">
+    <ion-card  *ngIf="qrData">
+      <ngx-qrcode class="clase-qr2" [elementType]='elementType' [value]='qrData'></ngx-qrcode>
+      <!--<ion-input type="text" placeholder="Ingrese Direccion" [(ngModel)]="qrData"></ion-input>-->
     </ion-card>
   </ion-content>
 
@@ -57,7 +55,7 @@
         <ion-label>Asistencias</ion-label>
         <ion-badge>1</ion-badge>
       </ion-tab-button>
-      <ion-tab-button routerLink="/logueo-profesor" tab="crear-qr">
+      <ion-tab-button routerLink="/crear-qr" tab="crear-qr">
         <ion-icon name="camera"></ion-icon>
         <ion-label>Generar QR</ion-label>
       </ion-tab-button>
