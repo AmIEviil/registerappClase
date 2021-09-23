@@ -26,7 +26,7 @@
     <mat-tab label="Opcion 3"> Tercera </mat-tab>
   </mat-tab-group>-->
 
-  <ion-title class="titulo">Iniciar sesion <br> Profesor</ion-title>
+  <ion-title class="titulo">Iniciar sesión <br> Profesor</ion-title>
 
   <form class="formulario-ingreso">
     <mat-form-field class="cajas-input" appearance="fill">
@@ -45,6 +45,7 @@
 
 
     <div class="ingresar-info">
+      <mat-label (click)='irReestablecerPass()' class="contraseña" >¿Has olvidado tu contraseña?</mat-label>
       <button routerLink="/perfil-profesor" class="boton-ingresar" mat-raised-button matTooltip="Info about the action"
         aria-label="Button that displays a tooltip when focused or hovered over">
         Ingresar

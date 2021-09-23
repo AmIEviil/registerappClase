@@ -1,11 +1,22 @@
 //estilo titulo
 .titulo{
-    text-align:center;
-    color: black;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 25px;
-  }
+  text-align:center;
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 24px;
+  margin-top: 0%;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 15%;
+}
 
+
+
+////////////imagen de fondo//////////@at-root
+ion-content{
+  --background: url('/assets/img/fondoxd.jpg') no-repeat 100% 100%;
+}
+    
   
 .titulo1{
     
@@ -31,12 +42,18 @@
 
 
 .clase-qr{
+    margin:auto;
     text-align: center;
-    
-   
+    text-size-adjust: 100%;
+    height: 50%;
+    width: 70%;
+    margin-top: 20%;
+    justify-content: center;
+    background-color: rgba(8, 8, 8, 0.2);
+    border: black solid 1px;
 }
 
-.clase-qr2{
-    width: 60%;
-    height: 60%;
+.codigo-separar{
+  margin-top: 30%;
 }
+

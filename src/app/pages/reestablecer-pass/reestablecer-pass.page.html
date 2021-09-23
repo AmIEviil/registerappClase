@@ -28,7 +28,7 @@
   </mat-tab-group>-->
 
 
-  <ion-title class="titulo">Iniciar sesión <br>Alumno</ion-title>
+  <ion-title class="titulo">Reestablecer la <br>Contraseña</ion-title>
 
 
 
@@ -39,21 +39,17 @@
     </mat-form-field>
 
     <mat-form-field class="cajas-input" appearance="fill">
-      <mat-label>Contraseña</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
+      <mat-label>Correo Electronico</mat-label>
+      <input matInput placeholder="" value="">
     </mat-form-field>
 
-   
-    <div class="ingresar-info">
+    
 
-      <mat-label (click)='irReestablecerPass()' class="contraseña" >¿Has olvidado tu contraseña?</mat-label>
-      <button routerLink="/perfil-alumno" class="boton-ingresar" mat-raised-button matTooltip="Info about the action"
+
+    <div class="ingresar-info">
+      <button (click)='mensajeAlerta1()' class="boton-ingresar" mat-raised-button matTooltip="Info about the action"
         aria-label="Button that displays a tooltip when focused or hovered over">
-        Ingresar
+        Reestablecer
       </button>
     </div>
     <!--<mat-form-field class="example-full-width" appearance="fill">

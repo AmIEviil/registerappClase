@@ -34,7 +34,11 @@ const routes: Routes = [
   {
     path: 'escanear-qr',
     loadChildren: () => import('./pages/escanear-qr/escanear-qr.module').then( m => m.EscanearQRPageModule)
+  },  {
+    path: 'reestablecer-pass',
+    loadChildren: () => import('./pages/reestablecer-pass/reestablecer-pass.module').then( m => m.ReestablecerPassPageModule)
   },
+
 ];
 
 @NgModule({

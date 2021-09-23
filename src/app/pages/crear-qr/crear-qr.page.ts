@@ -8,7 +8,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
   styleUrls: ['./crear-qr.page.scss'],
 })
 export class CrearQRPage implements OnInit {
-  qrData = "www.instagram.com" ;
+  qrData = "dlkfjjlflkkdflkdflkldfkslgslrghñrohñgñksnñksnñgdskñjfdkjdfgjdfjkljgd" ;
   elementType : 'url'  |  'img'  |  'canvas'  =  'canvas'
   constructor(private barcodeScanner  :BarcodeScanner) { }
 
