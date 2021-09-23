@@ -8,6 +8,7 @@ import { PerfilAlumnoPageRoutingModule } from './perfil-alumno-routing.module';
 
 import { PerfilAlumnoPage } from './perfil-alumno.page';
 import { AppModuleModule } from 'src/app/app-module.module';
+
 @NgModule({
   imports: [
     CommonModule,

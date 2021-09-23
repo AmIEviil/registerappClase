@@ -1,38 +1,25 @@
-<!--<ion-header>
-  
-</ion-header>-->
+
 <!--BARRA DE MENU-->
 <mat-toolbar color="primary">
   <mat-toolbar-row class="barra-menu">
 
 
+    <span class="espacio-barra">RegistrAPP</span>
 
-    <ion-tab-button class="color-volver" routerLink="/logueo-alumno" tab="schedule">
-      <ion-icon name="chevron-back-outline"></ion-icon>     
+    <ion-tab-button class="color-volver" (click)='mensajeCerrarSesion()' tab="schedule">
+      <ion-icon name="log-out-outline"></ion-icon>     
     </ion-tab-button>
 
 
-
-    <span class="espacio-barra" >RegistrAPP</span>
+    
   </mat-toolbar-row>
 </mat-toolbar>
 
 <ion-content>
-
-  
-
-
-  <!--BARRA PARA CAMBIAR DE PAGINA?-->
-  <!--<mat-tab-group>
-    <mat-tab label="Opcion 1"> Primera</mat-tab>
-    <mat-tab label="Opcion 2"> Segunda </mat-tab>
-    <mat-tab label="Opcion 3"> Tercera </mat-tab>
-  </mat-tab-group>-->
-
-
+<!--------------------------------------------------------->
   <ion-title class="titulo">Bienvenido Alumno</ion-title>
-  <!------------------------------------------------->
 
+<!------------------------------------------------->
 
   <ion-tabs>
     <ion-tab-bar slot="bottom">
@@ -45,7 +32,7 @@
         <ion-icon name="camera"></ion-icon>
         <ion-label>Escanear QR</ion-label>
       </ion-tab-button>
-      <ion-tab-button tab="perfil">
+      <ion-tab-button routerLink="/perfil-alumno" tab="perfil">
         <ion-icon name="person-circle"></ion-icon>
         <ion-label>Perfil</ion-label>
       </ion-tab-button>

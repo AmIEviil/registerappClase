@@ -9,7 +9,7 @@
 
 
     <ion-tab-button class="color-volver" routerLink="/home" tab="schedule">
-      <ion-icon name="chevron-back-outline"></ion-icon>
+      <ion-icon name="chevron-back-circle-outline"></ion-icon>
     </ion-tab-button>
 
     <span class="espacio-barra">RegistrAPP</span>
@@ -18,31 +18,24 @@
 
 <ion-content>
 
-
-
-  <!--BARRA PARA CAMBIAR DE PAGINA?-->
-  <!--<mat-tab-group>
-    <mat-tab label="Opcion 1"> Primera</mat-tab>
-    <mat-tab label="Opcion 2"> Segunda </mat-tab>
-    <mat-tab label="Opcion 3"> Tercera </mat-tab>
-  </mat-tab-group>-->
-
- <!---->
-  <h4 class="titulo22">Bienvenido a RegistrAPP</h4>
+  <div class="imagen-fondo">
+    <img class="imagen-png" src="/assets/img/icon.png" alt=""/>
+    <h4 class="titulo22">Bienvenido a RegistrAPP</h4>
+    
+  </div>     
+  
   <ion-title class="titulo">Seleccione el tipo <br>  de usuario</ion-title>
-
   <div class="centrarformu">
+    
     <div>
   <!--    <ion-label class="agrandar">Iniciar Sesión Estudiante</ion-label><br> -->
       <ion-button class="centrar-boton" color="primary" (click)='irlogueoAlumno()'>ESTUDIANTE</ion-button> <br>
     </div>
-    
-    
+
     <div class="separar-div">
     <!--    <ion-label class="agrandar" >Iniciar Sesión Docente</ion-label><br> -->
       <ion-button class="centrar-boton" color="danger" (click)='irlogueoProfesor()'>DOCENTE</ion-button>
     </div>
-
   </div>
  
 
