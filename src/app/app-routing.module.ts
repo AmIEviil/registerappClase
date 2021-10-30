@@ -38,7 +38,23 @@ const routes: Routes = [
   {
     path: 'reestablecer-pass',
     loadChildren: () => import('./pages/reestablecer-pass/reestablecer-pass.module').then( m => m.ReestablecerPassPageModule)
+  },  {
+    path: 'asig-alum',
+    loadChildren: () => import('./pages/asig-alum/asig-alum.module').then( m => m.AsigAlumPageModule)
   },
+  {
+    path: 'asig-docente',
+    loadChildren: () => import('./pages/asig-docente/asig-docente.module').then( m => m.AsigDocentePageModule)
+  },
+  {
+    path: 'info-alum',
+    loadChildren: () => import('./pages/info-alum/info-alum.module').then( m => m.InfoAlumPageModule)
+  },
+  {
+    path: 'info-docente',
+    loadChildren: () => import('./pages/info-docente/info-docente.module').then( m => m.InfoDocentePageModule)
+  },
+
 
 ];
 

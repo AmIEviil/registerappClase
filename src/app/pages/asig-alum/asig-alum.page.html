@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="barra-menu">
+
+
+    <ion-tab-button class="color-volver" routerLink="/perfil-alumno" tab="schedule">
+      <ion-icon name="chevron-back-circle-outline"></ion-icon>
+    </ion-tab-button>
+
+    <span class="espacio-barra">RegistrAPP</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<ion-content>
+<div id="calendario">
+  <mat-card class="demo-inline-calendar-card">
+    <mat-calendar (selectedChange)="selected = $event"></mat-calendar>
+  </mat-card>
+  <ion-label> Dia seleccionado : {{selected}}</ion-label>
+</div>
+
+<div>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Calidad de Software
+      </mat-panel-title>
+      <mat-panel-description>
+        ASY-002
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>Escanear QR</p>
+  </mat-expansion-panel>
+</div>
+</ion-content>
