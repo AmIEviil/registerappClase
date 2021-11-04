@@ -5,7 +5,7 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row class="barra-menu">
 
-    <ion-tab-button class="color-volver" routerLink="/perfil-profesor" tab="schedule">
+    <ion-tab-button class="color-volver" routerLink="/asig-docente" tab="schedule">
       <ion-icon name="chevron-back-circle-outline"></ion-icon>
     </ion-tab-button>
 
@@ -15,7 +15,7 @@
 </mat-toolbar>
 
 <ion-content>
-
+  <ion-title class="titulo">Codigo QR</ion-title>
   <!--BARRA PARA CAMBIAR DE PAGINA?-->
   <!--<mat-tab-group>
     <mat-tab label="Opcion 1"> Primera</mat-tab>
@@ -23,11 +23,6 @@
     <mat-tab label="Opcion 3"> Tercera </mat-tab>
   </mat-tab-group>-->
 
-   
-  <ion-title class="titulo">Codigo QR</ion-title>
-
- 
-  
   <ion-card class="clase-qr" *ngIf="qrData">
     <div class="codigo-separar">
        <ngx-qrcode  [elementType]='elementType' [value]='qrData'></ngx-qrcode>
