@@ -10,12 +10,6 @@
     </ion-tab-button>
 
     <span class="espacio-barra">RegistrAPP</span>
-
-    <ion-tab-button class="color-volver" (click)='mensajeCerrarSesionProfe()' tab="schedule">
-      <ion-icon name="log-out-outline"></ion-icon>
-    </ion-tab-button>
-
-
     
   </mat-toolbar-row>
 </mat-toolbar>
@@ -30,7 +24,7 @@
   </mat-tab-group>-->
 
    
-  <ion-title class="titulo">Generando QR</ion-title>
+  <ion-title class="titulo">Codigo QR</ion-title>
 
  
   
@@ -38,33 +32,13 @@
     <div class="codigo-separar">
        <ngx-qrcode  [elementType]='elementType' [value]='qrData'></ngx-qrcode>
     </div>
-   
+  </ion-card> 
  <!--<ion-input class="cajadetexto" type="text" placeholder="Ingrese Direccion" [(ngModel)]="qrData"></ion-input>-->
  
-  </ion-card>
+  
   
 
 
   <!------------------------------------------------->
-
-
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="asis">
-        <ion-icon name="calendar"></ion-icon>
-        <ion-label>Asistencias</ion-label>
-        <ion-badge>1</ion-badge>
-      </ion-tab-button>
-      <ion-tab-button routerLink="/crear-qr" tab="crear-qr">
-        <ion-icon name="qr-code-outline"></ion-icon>
-        <ion-label>Generar QR</ion-label>
-      </ion-tab-button>
-      <ion-tab-button routerLink="/perfil-profesor" tab="perfil">
-        <ion-icon name="person-circle"></ion-icon>
-        <ion-label>Perfil</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
-
 
 </ion-content>
