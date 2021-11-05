@@ -32,7 +32,29 @@
       <ion-button class="centrar-boton" color="danger" (click)='irlogueoProfesor()'>DOCENTE</ion-button>
     </div>
   </div>
- 
+  <br>
+  <ion-list lines="full" class="ion-login">
+    <ion-list-header lines="full">
+      <ion-label clas="ion-titulo">
+        Login Acceso
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Contraseña</ion-label>
+      <ion-input  type="password" [(ngModel)]="pass"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-button (click)="validar()"> Login </ion-button>
+    </ion-item>
+
+  </ion-list>
 
 
 </ion-content>

@@ -3,7 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-
+//Importar enviroment
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from 'angularfire2'
+import { AngularFirestoreModule} from 'angularfire2/firestore'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,7 +16,10 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx'; ///IMPORT
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, BrowserAnimationsModule],
+  imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    BrowserModule, IonicModule.forRoot(), AppRoutingModule, BrowserAnimationsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   , BarcodeScanner, Base64ToGallery //Y AQUI IMPORTAMOS LAS DOS COSAS
   ],
