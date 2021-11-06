@@ -60,6 +60,8 @@ export class HomePage {
   irlogueoProfesor(){ //lo mismo de arriba
     this.router.navigate(['/logueo-profesor'])
   }
-
+  irReestablecerPass(){  //metodos que nos llevan a la pagina en especifico
+    this.router.navigate(['/reestablecer-pass'])
+  }
 
 }

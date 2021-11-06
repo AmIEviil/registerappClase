@@ -24,7 +24,7 @@ export class PerfilAlumnoPage implements OnInit {
           text: 'Si',
           handler: (dis) => {
             console.log();
-            this.router.navigate(['/logueo-alumno']);
+            this.router.navigate(['/home']);
             
           }
         }, {

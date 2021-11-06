@@ -14,29 +14,14 @@
 <ion-content>
 
   <div class="imagen-fondo">
-    <img class="imagen-png" src="/assets/img/icon.png" alt=""/>
-    <h4 class="titulo22">Bienvenido a RegistrAPP</h4>
-    
-  </div>     
-  
-  <ion-title class="titulo">Seleccione el tipo <br>  de usuario</ion-title>
-  <div class="centrarformu">
-    
-    <div>
-  <!--    <ion-label class="agrandar">Iniciar Sesión Estudiante</ion-label><br> -->
-      <ion-button class="centrar-boton" color="primary" (click)='irlogueoAlumno()'>ESTUDIANTE</ion-button> <br>
-    </div>
-
-    <div class="separar-div">
-    <!--    <ion-label class="agrandar" >Iniciar Sesión Docente</ion-label><br> -->
-      <ion-button class="centrar-boton" color="danger" (click)='irlogueoProfesor()'>DOCENTE</ion-button>
-    </div>
+    <img class="imagen-png" src="/assets/img/icon.png" alt="" />
+    <h4 class="titulo22">Login Acceso</h4>
   </div>
-  <br>
+
   <ion-list lines="full" class="ion-login">
     <ion-list-header lines="full">
       <ion-label clas="ion-titulo">
-        Login Acceso
+        
       </ion-label>
     </ion-list-header>
 
@@ -47,18 +32,22 @@
 
     <ion-item>
       <ion-label>Contraseña</ion-label>
-      <ion-input  type="password" [(ngModel)]="pass"></ion-input>
+      <ion-input type="password" [(ngModel)]="pass"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-button (click)="validar()"> Login </ion-button>
+      <mat-label (click)='irReestablecerPass()' class="contraseña">¿Has olvidado tu contraseña?</mat-label>
     </ion-item>
 
-  </ion-list>
+  
+  <div class="ingresar-info">
 
+    
+    <button (click)='validar()' class="boton-ingresar" mat-raised-button matTooltip="Info about the action"
+      aria-label="Button that displays a tooltip when focused or hovered over">
+      Ingresar
+    </button>
+  </div>
+</ion-list>
 
 </ion-content>
-
-
-<div>
-</div>
