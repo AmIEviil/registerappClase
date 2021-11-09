@@ -17,6 +17,7 @@ export class EscanearQRPage implements OnInit {
               ) { }
 
   ngOnInit() {
+    this.scannerQR();
   }
 
   scannerQR(){

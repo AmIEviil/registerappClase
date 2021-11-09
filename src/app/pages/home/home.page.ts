@@ -21,7 +21,8 @@ export class HomePage {
     private navCtrl : NavController,
     private toast : ToastController
     ) {}
-
+  
+ 
   validar(){
     console.log(this.nombre+ " - "+this.pass);
     this.api.getTodos().subscribe(resp=>{

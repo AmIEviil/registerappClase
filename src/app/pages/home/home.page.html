@@ -15,39 +15,46 @@
 
   <div class="imagen-fondo">
     <img class="imagen-png" src="/assets/img/icon.png" alt="" />
-    <h4 class="titulo22">Login Acceso</h4>
+    <h4 class="titulo22">Iniciar sesion</h4>
   </div>
 
   <ion-list lines="full" class="ion-login">
-    <ion-list-header lines="full">
-      <ion-label clas="ion-titulo">
-        
-      </ion-label>
-    </ion-list-header>
-
-    <ion-item>
-      <ion-label>Usuario</ion-label>
-      <ion-input type="text" [(ngModel)]="nombre"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="pass"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <mat-label (click)='irReestablecerPass()' class="contraseña">¿Has olvidado tu contraseña?</mat-label>
-    </ion-item>
-
   
-  <div class="ingresar-info">
 
     
-    <button (click)='validar()' class="boton-ingresar" mat-raised-button matTooltip="Info about the action"
-      aria-label="Button that displays a tooltip when focused or hovered over">
-      Ingresar
-    </button>
-  </div>
-</ion-list>
+
+    <mat-form-field class="cajas-input" appearance="fill">
+      <mat-label>Usuario</mat-label>
+      <input  [(ngModel)]="nombre" matInput placeholder="" value="">
+    </mat-form-field>
+
+   
+
+    <mat-form-field class="cajas-input" appearance="fill">
+      <mat-label>Contraseña</mat-label>
+      <input [(ngModel)]="pass" matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility_off'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <div class="ingresar-info">
+
+      <mat-label (click)='irReestablecerPass()' class="contraseña" >¿Has olvidado tu contraseña?</mat-label>
+      <button (click)='validar()' class="boton-ingresar" mat-raised-button matTooltip="Info about the action"
+        aria-label="Button that displays a tooltip when focused or hovered over">
+        Ingresar
+      </button>
+    </div>
+
+  
+    <div class="ingresar-info">
+
+     
+    </div>
+  </ion-list>
+
+  
 
 </ion-content>

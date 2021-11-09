@@ -17,7 +17,7 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx'; ///IMPORT
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig), //CONEXION CON FIREBASE
     AngularFirestoreModule,
     BrowserModule, IonicModule.forRoot(), AppRoutingModule, BrowserAnimationsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
