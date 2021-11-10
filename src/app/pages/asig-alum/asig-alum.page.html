@@ -20,30 +20,16 @@
 
 <div>
   <mat-expansion-panel hideToggle>
-    <mat-expansion-panel-header>
+    <mat-expansion-panel-header *ngFor = "let asignatura of asignaturas">
       <mat-panel-title>
-        Calidad de Software
+        {{asignatura.nombre}}
       </mat-panel-title>
       <mat-panel-description>
-        ASY-002
+        {{asignatura.sigla}}-{{asignatura.seccion}}
       </mat-panel-description>
     </mat-expansion-panel-header>
     <p routerLink="/escanear-qr">Escanear QR</p>
   </mat-expansion-panel>
 </div>
 
-
-<div>
-  <mat-expansion-panel hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Emprendimiento
-      </mat-panel-title>
-      <mat-panel-description>
-        EMP-002
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <p routerLink="/escanear-qr">Escanear QR</p>
-  </mat-expansion-panel>
-</div>
 </ion-content>

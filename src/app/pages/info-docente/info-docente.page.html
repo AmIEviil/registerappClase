@@ -11,5 +11,21 @@
 </mat-toolbar>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item *ngFor ="let usuario of usuarios">
+      <ion-avatar slot="start">
+       <ion-img  [src]="usuario.img"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h2> <p>{{usuario.username}} {{usuario.apellidoP}}</p></h2>
+        <p>Usuario</p>
+        <h1> <p>{{usuario.nombre}} </p></h1>
+        <p>Correo</p>
+        <h1> <p>{{usuario.correo}} </p></h1>
+        <p>Especialidad</p>
+        <h1> <p>{{usuario.especialidad}} </p></h1>
+      </ion-label>
+    </ion-item>
+  
+</ion-list>
 </ion-content>

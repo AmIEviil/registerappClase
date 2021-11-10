@@ -9,7 +9,7 @@ import { Router } from '@angular/router'; //para poder hacer el linkeo al presio
   styleUrls: ['./crear-qr.page.scss'],
 })
 export class CrearQRPage implements OnInit {
-  qrData = "www.google.cl" ;
+  qrData = "https://console.firebase.google.com/u/0/project/undefined/firestore/data/usuarios/tWXHTpY5YABznPmDIEK0" ;
   elementType : 'url'  |  'img'  |  'canvas'  =  'canvas'
   constructor(private barcodeScanner  :BarcodeScanner, public alertController: AlertController, private router: Router) { }
 
