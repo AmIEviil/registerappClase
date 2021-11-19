@@ -5,15 +5,15 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row class="barra-menu">
 
-    <span class="espacio-barra" >RegistrAPP</span>
+    <span class="espacio-barra">RegistrAPP</span>
 
     <ion-tab-button class="color-volver" (click)='mensajeCerrarSesionProfe()' tab="schedule">
-      <ion-icon name="log-out-outline"></ion-icon>     
+      <ion-icon name="log-out-outline"></ion-icon>
     </ion-tab-button>
 
 
 
-    
+
   </mat-toolbar-row>
 </mat-toolbar>
 
@@ -25,28 +25,28 @@
     <mat-tab label="Opcion 3"> Tercera </mat-tab>
   </mat-tab-group>-->
 
-  <ion-title class="titulo">Bienvenido Profesor</ion-title>
-
+  <ion-title class="titulo" *ngFor="let profe of profesor" >Bienvenido Profesor : <br><br> {{profe.Nombre}} {{profe.apellidoP}} </ion-title>
+  
   <!------------------------------------------------->
 
 
   <ion-tabs>
     <ion-tab-bar slot="bottom">
-      <ion-tab-button routerLink="/asig-docente" tab="asis">
+      <ion-tab-button routerLink="/asig-docente">
         <ion-icon name="calendar"></ion-icon>
         <ion-label>Asignaturas</ion-label>
         <ion-badge>1</ion-badge>
       </ion-tab-button>
-      
-      <ion-tab-button routerLink="/info-docente" tab="perfil">
+
+      <ion-tab-button routerLink="/info-docente">
         <ion-icon name="person-circle"></ion-icon>
         <ion-label>Perfil</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
 
-   
+
   </ion-tabs>
- 
+
   <!------------------------------------------------->
 
 </ion-content>

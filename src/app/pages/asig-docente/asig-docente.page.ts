@@ -2,6 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 //
 import { ActionSheetController } from '@ionic/angular';
+//
+import {AsignaturasService } from  '../../services/asignaturas.service';
+interface ramo {
+  id?: string;
+  horario: string;
+  nombre: string;
+  sala: string;
+  seccion: string;
+  sigla: string;
+}
 
 @Component({
   selector: 'app-asig-docente',
@@ -10,20 +20,28 @@ import { ActionSheetController } from '@ionic/angular';
 })
 export class AsigDocentePage implements OnInit {
 
-  constructor(private router : Router , public actionSheetController: ActionSheetController) { }
+  constructor(private router : Router , public actionSheetController: ActionSheetController, public AsignaService : AsignaturasService ) { }
+
+  public ramos : any = [];
+
+  ngOnInit() {
+    this.AsignaService.getRamos().subscribe( ramos => {
+      ramos.map(ramos =>{
+        const data : ramo = ramos.payload.doc.data() as ramo;
+        data.id = ramos.payload.doc.id;
+        
+        
+        this.ramos.push(data);
+      })
+    })
+  }
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
       header: 'Asignatura',
       cssClass: 'my-custom-class',
-      buttons: [{
-        text: 'Delete',
-        role: 'destructive',
-        icon: 'trash',
-        handler: () => {
-          console.log('Delete clicked');
-        }
-      }, {
+      buttons: [
+        {
         text: 'Crear QR',
         icon: 'share',
         handler: () => {
@@ -31,37 +49,35 @@ export class AsigDocentePage implements OnInit {
           this.router.navigate(['/crear-qr']);
         }
       }, {
-        text: 'Crear Asistencia',
-        icon: 'caret-forward-circle',
+        text: 'Revisar Asistencia',
+        icon: 'logo-buffer',
         handler: () => {
-          console.log('Play clicked');
+          this.router.navigate(['/lista']);
         }
-      }, {
+      }, /*{
         text: 'Favorite',
         icon: 'heart',
         handler: () => {
           console.log('Favorite clicked');
         }
-      }, {
-        text: 'Cancel',
-        icon: 'close',
-        role: 'cancel',
+      }, */{
+        text: 'Atras',
+        icon: 'arrow-back',
+        
         handler: () => {
-          console.log('Cancel clicked');
         }
       }]
     });
     await actionSheet.present();
 
     const { role } = await actionSheet.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
+    console.log(role);
   }
 
-  prueba(){
+  opciones(){
     this.presentActionSheet();
   }
 
-  ngOnInit() {
-  }
+  
 
 }

@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router'; //para poder hacer el linkeo al presionar 'Si'
-
+//
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-reestablecer-pass',
   templateUrl: './reestablecer-pass.page.html',
   styleUrls: ['./reestablecer-pass.page.scss'],
 })
 export class ReestablecerPassPage implements OnInit {
-
-  constructor(public alertController: AlertController, private router: Router) { }
+  public email:string = "";
+  constructor(public alertController: AlertController, private router: Router,private navCtrl : NavController) { }
 
   ngOnInit() {
   }

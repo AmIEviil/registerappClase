@@ -6,22 +6,22 @@
       <ion-icon name="chevron-back-circle-outline"></ion-icon>
     </ion-tab-button>
 
-    <span class="espacio-barra">RegistrAPP</span>
+    <span class="espacio-barra">RegistrAPP</span>Asignaturas
   </mat-toolbar-row>
 </mat-toolbar>
 
 <ion-content>
-  <div>
+  <div class="ramos">
     <mat-expansion-panel hideToggle>
-      <mat-expansion-panel-header>
+      <mat-expansion-panel-header *ngFor = "let ramo of ramos">
         <mat-panel-title>
-          Calidad de Software
+          {{ramo.nombre}}
         </mat-panel-title>
         <mat-panel-description>
-          ASY-002
+          {{ramo.sigla}}-{{ramo.seccion}}
         </mat-panel-description>
-      </mat-expansion-panel-header >
-      <p (click)="prueba()">Opciones</p>
+      </mat-expansion-panel-header>
+      <p (click)="opciones()">Opciones</p>
     </mat-expansion-panel>
   </div>
 </ion-content>

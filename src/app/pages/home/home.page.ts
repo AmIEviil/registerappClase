@@ -5,6 +5,7 @@ import { ApiloginService } from 'src/app/services/apilogin.service';
 import { NavController } from '@ionic/angular';
 import { UsuarioI } from '../model/UsuarioI';
 import { ToastController } from '@ionic/angular';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -26,11 +27,11 @@ export class HomePage {
   validar(){
     console.log(this.nombre+ " - "+this.pass);
     this.api.getTodos().subscribe(resp=>{
-      console.log(resp);
+      
       this.usuarios=resp;
       var x = 0;
       this.usuarios.forEach(item => {
-        console.log(item.nombre+ " - "+item.pass);
+        
         if (item.nombre==this.nombre && item.pass==this.pass) {
           console.log("Usuario Validado con Nivel "+ item.nivel);
           x=1;

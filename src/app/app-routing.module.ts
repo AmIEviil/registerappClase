@@ -12,14 +12,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'logueo-alumno',
-    loadChildren: () => import('./pages/logueo-alumno/logueo-alumno.module').then( m => m.LogueoAlumnoPageModule)
-  },
-  {
-    path: 'logueo-profesor',
-    loadChildren: () => import('./pages/logueo-profesor/logueo-profesor.module').then( m => m.LogueoProfesorPageModule)
-  },
-  {
     path: 'perfil-alumno',
     loadChildren: () => import('./pages/perfil-alumno/perfil-alumno.module').then( m => m.PerfilAlumnoPageModule)
   },
@@ -38,7 +30,8 @@ const routes: Routes = [
   {
     path: 'reestablecer-pass',
     loadChildren: () => import('./pages/reestablecer-pass/reestablecer-pass.module').then( m => m.ReestablecerPassPageModule)
-  },  {
+  },
+  {
     path: 'asig-alum',
     loadChildren: () => import('./pages/asig-alum/asig-alum.module').then( m => m.AsigAlumPageModule)
   },
@@ -54,6 +47,11 @@ const routes: Routes = [
     path: 'info-docente',
     loadChildren: () => import('./pages/info-docente/info-docente.module').then( m => m.InfoDocentePageModule)
   },
+  {
+    path: 'lista',
+    loadChildren: () => import('./pages/lista/lista.module').then( m => m.ListaPageModule)
+  },
+
 
 
 ];

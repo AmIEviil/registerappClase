@@ -6,7 +6,7 @@
       <ion-icon name="chevron-back-circle-outline"></ion-icon>
     </ion-tab-button>
 
-    <span class="espacio-barra">RegistrAPP</span>
+    <span class="espacio-barra">RegistrAPP</span>Asignaturas
   </mat-toolbar-row>
 </mat-toolbar>
 
@@ -14,11 +14,12 @@
 <div id="calendario">
   <mat-card class="demo-inline-calendar-card">
     <mat-calendar (selectedChange)="selected = $event"></mat-calendar>
+    <ion-label> Dia seleccionado : {{selected}}</ion-label>
   </mat-card>
-  <ion-label> Dia seleccionado : {{selected}}</ion-label>
+  
 </div>
 
-<div>
+<div class="asignaturas">
   <mat-expansion-panel hideToggle>
     <mat-expansion-panel-header *ngFor = "let asignatura of asignaturas">
       <mat-panel-title>

@@ -29,8 +29,6 @@ export class AsigAlumPage implements OnInit {
       asignaturas.map(asignaturas =>{
         const data : asignatura = asignaturas.payload.doc.data() as asignatura;
         data.id = asignaturas.payload.doc.id;
-        
-        console.log(data)
         this.asignaturas.push(data);
       })
     })

@@ -6,24 +6,25 @@
       <ion-icon name="chevron-back-circle-outline"></ion-icon>
     </ion-tab-button>
 
-    <span class="espacio-barra">RegistrAPP</span>
+    <span class="espacio-barra">RegistrAPP</span>Perfil
   </mat-toolbar-row>
 </mat-toolbar>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor ="let usuario of usuarios">
+  <ion-list class="perfil">
+    <ion-item *ngFor ="let alumno of alumnos">
       <ion-avatar slot="start">
-       <ion-img  [src]="usuario.img"></ion-img>
+       <ion-img class="fperfil" [src]="alumno.img"></ion-img>
       </ion-avatar>
       <ion-label>
-        <h2> <p>{{usuario.username}} {{usuario.apellidoP}}</p></h2>
+        <p>Nombre Alumno</p>
+        <h2> <p>{{alumno.nombre}} {{alumno.apellidoP}}</p></h2>
         <p>Usuario</p>
-        <h1> <p>{{usuario.nombre}} </p></h1>
+        <h1> <p>{{alumno.usuario}} </p></h1>
         <p>Correo</p>
-        <h1> <p>{{usuario.correo}} </p></h1>
+        <h1> <p>{{alumno.correo}} </p></h1>
         <p>Carrera</p>
-        <h1> <p>{{usuario.carrera}} </p></h1>
+        <h1> <p>{{alumno.carrera}} </p></h1>
       </ion-label>
     </ion-item>
   

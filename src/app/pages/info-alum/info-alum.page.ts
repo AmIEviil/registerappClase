@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-///asignaturas
+///infoperfil
 import {InfoService } from  '../../services/info.service';
-interface usuario {
+interface alumno {
     id?: string;
     nombre: string;
     img: string;
-    username:string;
+    usuario:string;
     apellidoP:string;
     carrera:string;
     correo:string
@@ -18,20 +18,19 @@ interface usuario {
 })
 export class InfoAlumPage implements OnInit {
 
-  public usuarios : any = [];
+  public alumnos : any = [];
 
   constructor(private router: Router,
     public InfoServ : InfoService
     ) { }
 
   ngOnInit() {
-    this.InfoServ.getUsuario().subscribe( usuarios => {
-      usuarios.map(usuarios =>{
-        const data : usuario = usuarios.payload.doc.data() as usuario;
-        data.id = usuarios.payload.doc.id;
-        
+    this.InfoServ.getAlumno().subscribe( alumnos => {
+      alumnos.map(alumnos =>{
+        const data : alumno = alumnos.payload.doc.data() as alumno;
+        data.id = alumnos.payload.doc.id;
         console.log(data)
-        this.usuarios.push(data);
+        this.alumnos.push(data);
       })
     })
   }

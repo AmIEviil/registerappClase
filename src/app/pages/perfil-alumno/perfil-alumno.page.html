@@ -17,13 +17,13 @@
 
 <ion-content>
 <!--------------------------------------------------------->
-  <ion-title class="titulo">Bienvenido </ion-title>
+<ion-title class="titulo" *ngFor="let alumno of alumnos" >Bienvenido Alumno: <br><br> {{alumno.nombre}} {{alumno.apellidoP}} </ion-title>
 
 <!------------------------------------------------->
 
   <ion-tabs>
     <ion-tab-bar slot="bottom">
-      <ion-tab-button routerLink="/asig-alum" tab="asis">
+      <ion-tab-button routerLink="/asig-alum">
         <ion-icon name="calendar"></ion-icon>
         <ion-label>Asistencias</ion-label>
         <ion-badge>1</ion-badge>
@@ -32,7 +32,7 @@
         <!--<ion-icon name="camera"></ion-icon> -->
         <!--<ion-label>Escanear QR</ion-label> -->
       <!--</ion-tab-button> -->
-      <ion-tab-button routerLink="/info-alum" tab="perfil">
+      <ion-tab-button routerLink="/info-alum">
         <ion-icon name="person-circle"></ion-icon>
         <ion-label>Perfil</ion-label>
       </ion-tab-button>

@@ -19,20 +19,14 @@
   </div>
 
   <ion-list lines="full" class="ion-login">
-  
-
-    
-
     <mat-form-field class="cajas-input" appearance="fill">
       <mat-label>Usuario</mat-label>
       <input  [(ngModel)]="nombre" matInput placeholder="" value="">
     </mat-form-field>
 
-   
-
     <mat-form-field class="cajas-input" appearance="fill">
       <mat-label>Contraseña</mat-label>
-      <input [(ngModel)]="pass" matInput [type]="hide ? 'password' : 'text'">
+      <input [(ngModel)]="pass" matInput [type]="hide ? 'password' : 'password'">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility_off'}}</mat-icon>
@@ -47,8 +41,6 @@
         Ingresar
       </button>
     </div>
-
-  
     <div class="ingresar-info">
 
      

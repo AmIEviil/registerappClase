@@ -1,6 +1,7 @@
 .barra-menu {
     flex: 1 1 auto;
     background-color: rgb(65, 179, 247);
+    
 }
 .espacio-barra {
     width: 300px;
@@ -15,12 +16,19 @@ ion-content {
 }
 .demo-inline-calendar-card {
     width: 300px;
-    margin-top: 25px;
+    margin-top: 15%;
     margin: auto;
+    margin-bottom: 5%;
   }
 .calendario{
-    
+    margin-top: 15%;
     font-size: 22px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: auto;
+}
+.asignaturas{
+    margin-top: 5%;
+    border-radius: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
 }

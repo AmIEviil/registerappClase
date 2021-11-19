@@ -12,4 +12,7 @@ export class AsignaturasService {
   getAsignaturas(){
     return this.db.collection('asignaturas').snapshotChanges()
   }
+  getRamos(){
+    return this.db.collection('ramos').snapshotChanges()
+  }
 }

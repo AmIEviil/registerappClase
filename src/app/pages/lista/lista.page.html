@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="barra-menu">
+
+
+    <ion-tab-button class="color-volver" routerLink="/asig-docente" tab="schedule">
+      <ion-icon name="chevron-back-circle-outline"></ion-icon>
+    </ion-tab-button>
+
+    <span class="espacio-barra">RegistrAPP</span>Lista Presentes
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<ion-content>
+
+  <div >
+    <ion-list class="lista">
+      <ion-item ion-item *ngFor="let usuario of usuarios">
+        <ion-label (click)="opciones()"> {{usuario.nombre}} - {{usuario.apellido}}
+          <ion-button class="opciones"(click)="opciones()" >Opciones</ion-button>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button (click)="lista()">
+        <ion-icon name="clipboard"></ion-icon>
+        <ion-label>Alumnos</ion-label>
+        <ion-badge></ion-badge>
+      </ion-tab-button>
+    </ion-tab-bar>
+
+
+  </ion-tabs>
+</ion-content>
