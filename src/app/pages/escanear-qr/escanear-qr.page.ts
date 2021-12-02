@@ -3,6 +3,7 @@ import { AlertController } from '@ionic/angular'; /////
 import { Router } from '@angular/router'; //para poder hacer el linkeo al presionar 'Si'
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { ToastController } from '@ionic/angular';
+import { ApiService } from 'src/app/services/api.service';
 @Component({
   selector: 'app-escanear-qr',
   templateUrl: './escanear-qr.page.html',
@@ -13,7 +14,8 @@ export class EscanearQRPage implements OnInit {
   constructor(public alertController: AlertController, 
               private router: Router,
               private barcodeScann: BarcodeScanner,
-              private toastCtrl: ToastController              
+              private toastCtrl: ToastController   ,
+              private api: ApiService           
               ) { }
 
   ngOnInit() {
@@ -29,6 +31,11 @@ export class EscanearQRPage implements OnInit {
       }
     )
   }
+
+  grabar(){
+    
+  }
+
   async mensaje(texto:any){
     let toast=await this.toastCtrl.create({
       message: 'Se ha escaneado: ' + texto,

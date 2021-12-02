@@ -14,6 +14,7 @@ export class ApiService {
 
 
   ruta_profe:string="http://127.0.0.1:8000/api/profesor/"
+  ruta_asist:string="http://127.0.0.1:8000/api/asist/"
   httpOptions={
     headers: new HttpHeaders({
       'Content-Type':'application/json',
@@ -34,5 +35,8 @@ export class ApiService {
   }
   getConteo():Observable<any>{
     return this.http.post("http://127.0.0.1:8000/api/conteo/",this.httpOptions)
+  }
+  postAsistencia(asistencia):Observable<any>{
+    return this.http.post(this.ruta_asist+asistencia,this.httpOptions)
   }
 }
