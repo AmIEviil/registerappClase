@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { retry } from 'rxjs/operators';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,8 +16,5 @@ export class ApiListaService {
   listarTodo():Observable<any>{
     return this.Http.get(this.ruta_listar).pipe(retry(2));
   }
-
-
-
 
 }

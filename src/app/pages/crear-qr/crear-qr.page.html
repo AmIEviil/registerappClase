@@ -16,21 +16,13 @@
 
 <ion-content>
   <ion-title class="titulo">Codigo QR</ion-title>
-  <!--BARRA PARA CAMBIAR DE PAGINA?-->
-  <!--<mat-tab-group>
-    <mat-tab label="Opcion 1"> Primera</mat-tab>
-    <mat-tab label="Opcion 2"> Segunda </mat-tab>
-    <mat-tab label="Opcion 3"> Tercera </mat-tab>
-  </mat-tab-group>-->
+  
 
   <ion-card class="clase-qr" *ngIf="qrData">
     <div class="codigo-separar">
        <ngx-qrcode  [elementType]='elementType' [value]='qrData'></ngx-qrcode>
     </div>
   </ion-card> 
- <!--<ion-input class="cajadetexto" type="text" placeholder="Ingrese Direccion" [(ngModel)]="qrData"></ion-input>-->
- 
-  
   
 
 

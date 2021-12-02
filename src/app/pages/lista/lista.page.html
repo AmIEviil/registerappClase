@@ -1,3 +1,4 @@
+<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 <mat-toolbar color="primary">
   <mat-toolbar-row class="barra-menu">
 
@@ -12,17 +13,7 @@
 
 <ion-content>
 
-  <div >
-    <ion-list class="lista">
-      <ion-item ion-item *ngFor="let usuario of usuarios">
-        <ion-label (click)="opciones()"> {{usuario.nombre}} - {{usuario.apellido}}
-          <ion-button class="opciones"(click)="opciones()" >Opciones</ion-button>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-  </div>
-
-  <ion-tabs>
+  <ion-tabs class="barrabaja">
     <ion-tab-bar slot="bottom">
       <ion-tab-button (click)="lista()">
         <ion-icon name="clipboard"></ion-icon>
@@ -30,7 +21,28 @@
         <ion-badge></ion-badge>
       </ion-tab-button>
     </ion-tab-bar>
-
-
   </ion-tabs>
+
+<div class="alumno">
+  <ion-list>
+    <ion-item-sliding   *ngFor="let usuario of usuarios">
+      <ion-item >
+        <ion-label >
+          <h2>{{usuario.nombre}} - {{usuario.apellido}}</h2>
+          
+        </ion-label>
+        <ion-note slot="end">
+          {{hora}}
+        </ion-note>
+      </ion-item>
+  
+      <ion-item-options>
+        <ion-item-option color="primary">
+          <ion-icon slot="top" ios="ellipsis-horizontal" md="ellipsis-vertical" (click)="opciones()"></ion-icon>
+          Opciones
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</div>
 </ion-content>

@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
 import { ApiListaService } from 'src/app/services/api-lista.service';
 
-
+import { DatePipe } from '@angular/common'
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-lista',
@@ -13,12 +14,15 @@ import { ApiListaService } from 'src/app/services/api-lista.service';
 })
 export class ListaPage implements OnInit {
 
-  constructor(private router : Router , public actionSheetController: ActionSheetController, private api:ApiListaService ) { }
+  constructor(private router : Router , public actionSheetController: ActionSheetController, private apiL:ApiListaService ,private pipe: DatePipe,
+    private api:ApiService ) { }
   usuarios 
+  fecha: any
+  hora: any
   ngOnInit() {
   }
   lista(){
-    this.api.listarTodo().subscribe(
+    this.apiL.listarTodo().subscribe(
       (data)=>{
         this.usuarios= data;
       },
@@ -26,6 +30,37 @@ export class ListaPage implements OnInit {
         console.log(e);
       }
     );
+    
+    var rutProfe = (JSON.parse(localStorage.getItem("usuario"))).rut
+    var idRamo = localStorage.getItem("idRamo")
+    console.log("Rut: " + rutProfe)
+    console.log("idRamo: " + idRamo)
+
+    var now = Date.now()
+    this.fecha = this.pipe.transform(now, 'yyyy-MM-dd')
+    this.hora = this.pipe.transform(now, 'HH:mm:ss')
+    var idAsistencia= this.api.getConteo().subscribe(
+      (data)=>{
+        console.log("Cantidad de asistencias : " + data)
+        var asistencia = {
+          "id": data+1,
+          "idCurso": idRamo,
+          "idProfesor": rutProfe,
+          "fecha": this.fecha,
+          "hora": this.hora
+        }
+        console.log(asistencia)
+        
+      },
+      (e)=>{
+        console.log(e)
+      }
+    )
+    
+  }
+
+  opciones(){
+    this.presentActionSheet()
   }
 
   async presentActionSheet() {
@@ -33,34 +68,32 @@ export class ListaPage implements OnInit {
       header: 'Asignatura',
       cssClass: 'my-custom-class',
       buttons: [{
-        text: 'Delete',
-        role: 'destructive',
+        text: 'Presencial',
+        icon: 'checkmark',
+        handler: () => {
+          console.log('Actualizando estado...');
+        }
+      }, {
+        text: 'Online',
+        icon: 'wifi',
+        handler: () => {
+          console.log('Actualizando estado...');
+        }
+      }, {
+        text: 'Ausente',
         icon: 'trash',
         handler: () => {
+          console.log('Actualizando estado...');
         }
       }, {
-        text: 'Crear QR',
+        text: 'Justificado',
         icon: 'share',
         handler: () => {
-          console.log('Creando QR...');
-          this.router.navigate(['/crear-qr']);
-        }
-      }, {
-        text: 'Revisar Asistencia',
-        icon: 'caret-forward-circle',
-        handler: () => {
-          this.router.navigate(['/lista']);
-        }
-      }, {
-        text: 'Favorite',
-        icon: 'heart',
-        handler: () => {
-          console.log('Favorite clicked');
+          console.log('Actualizando estado...');
         }
       }, {
         text: 'Cancelar',
         icon: 'close',
-        role: 'cancel',
         handler: () => {
         }
       }]
@@ -71,8 +104,6 @@ export class ListaPage implements OnInit {
     console.log(role);
   }
 
-  opciones(){
-    console.log('funciona')
-  }
+  
 
 }
