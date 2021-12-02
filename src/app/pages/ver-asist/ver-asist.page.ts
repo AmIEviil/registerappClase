@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-///asignaturas
+import { AlertController } from '@ionic/angular'; /////
+import { Router } from '@angular/router'; //para poder hacer el linkeo al presionar 'Si'
 import {AsignaturasService } from  '../../services/asignaturas.service';
 interface asignatura {
     id?: string;
@@ -9,18 +9,19 @@ interface asignatura {
     sala: string;
     seccion: string;
     sigla: string;
+    porcentaje:string;
 }
 @Component({
-  selector: 'app-asig-alum',
-  templateUrl: './asig-alum.page.html',
-  styleUrls: ['./asig-alum.page.scss'],
+  selector: 'app-ver-asist',
+  templateUrl: './ver-asist.page.html',
+  styleUrls: ['./ver-asist.page.scss'],
 })
-export class AsigAlumPage implements OnInit {
-  
+export class VerAsistPage implements OnInit {
+
   public asignaturas : any = [];
 
-  constructor(private router: Router,
-    public AsignaService : AsignaturasService
+  constructor(public alertController: AlertController, public AsignaService : AsignaturasService,
+    private router: Router,           
     ) { }
 
   ngOnInit() {

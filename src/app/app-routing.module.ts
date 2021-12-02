@@ -50,7 +50,11 @@ const routes: Routes = [
   {
     path: 'lista',
     loadChildren: () => import('./pages/lista/lista.module').then( m => m.ListaPageModule)
+  },  {
+    path: 'ver-asist',
+    loadChildren: () => import('./pages/ver-asist/ver-asist.module').then( m => m.VerAsistPageModule)
   },
+
 
 
 

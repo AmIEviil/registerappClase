@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="barra-menu">
+
+    <ion-tab-button class="color-volver" routerLink="/perfil-alumno" tab="schedule">
+      <ion-icon name="chevron-back-circle-outline"></ion-icon>
+    </ion-tab-button>
+    
+    <span class="espacio-barra">RegistrAPP</span> Asistencia
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<ion-content>
+
+  <!------------------------------------------------->
+  <div class="ramos">
+    <ion-card *ngFor="let asignatura of asignaturas">
+      <ion-card-header>
+        <ion-card-subtitle> {{asignatura.sigla}}-{{asignatura.seccion}}</ion-card-subtitle>
+        <ion-card-title > {{asignatura.nombre}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content style="margin-left: 40%;">
+        {{asignatura.porcentaje}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>
