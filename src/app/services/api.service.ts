@@ -36,7 +36,7 @@ export class ApiService {
   getConteo():Observable<any>{
     return this.http.post("http://127.0.0.1:8000/api/conteo/",this.httpOptions)
   }
-  postAsistencia(asistencia):Observable<any>{
-    return this.http.post(this.ruta_asist+asistencia,this.httpOptions)
+  grabarAsistencia(asistencia):Observable<any>{
+    return this.http.post(this.ruta_asist,asistencia).pipe(retry(2));
   }
 }

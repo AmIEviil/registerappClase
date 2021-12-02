@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {AsignaturasService } from  '../../services/asignaturas.service';
 interface asignatura {
     id?: string;
+    idRamo:string;
     horario: string;
     nombre: string;
     sala: string;
@@ -24,6 +25,13 @@ export class AsigAlumPage implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.listadoAsignaturas()
+  }
+  escanear(idRamo:string){
+    localStorage.setItem("idRamo",idRamo)
+    this.router.navigate(['/escanear-qr']);
+  }
+  listadoAsignaturas(){
     this.AsignaService.getAsignaturas().subscribe( asignaturas => {
       asignaturas.map(asignaturas =>{
         const data : asignatura = asignaturas.payload.doc.data() as asignatura;
