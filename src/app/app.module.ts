@@ -15,6 +15,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'; ///IMPORTAR 
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx'; ///IMPORTAR ESTO AGREGAR 'ngx'
 //
 import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common'
+
 //
 
 @NgModule({
@@ -25,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFirestoreModule,
     BrowserModule, IonicModule.forRoot(), AppRoutingModule, BrowserAnimationsModule, HttpClientModule],
   providers: [{ provide: RouteReuseStrategy,  useClass: IonicRouteStrategy }
-  , BarcodeScanner, Base64ToGallery,//Y AQUI IMPORTAMOS LAS DOS COSAS
+  , BarcodeScanner, Base64ToGallery,DatePipe,//Y AQUI IMPORTAMOS LAS DOS COSAS
    {provide : FirestoreSettingsToken, useValue: {}}
   ],
   bootstrap: [AppComponent],

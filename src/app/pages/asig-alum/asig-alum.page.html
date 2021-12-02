@@ -20,8 +20,8 @@
 </div>
 
 <div class="asignaturas">
-  <mat-expansion-panel hideToggle>
-    <mat-expansion-panel-header *ngFor = "let asignatura of asignaturas">
+  <mat-expansion-panel hideToggle *ngFor = "let asignatura of asignaturas">
+    <mat-expansion-panel-header >
       <mat-panel-title>
         {{asignatura.nombre}}
       </mat-panel-title>
@@ -30,6 +30,7 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
     <p routerLink="/escanear-qr">Escanear QR</p>
+    <p routerLink="/ver-asist">Ver Asistencia</p>
   </mat-expansion-panel>
 </div>
 

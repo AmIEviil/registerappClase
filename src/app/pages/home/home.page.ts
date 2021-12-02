@@ -30,14 +30,24 @@ export class HomePage {
       
       this.usuarios=resp;
       var x = 0;
+      var datos={
+        rut:'',
+        nombre:'',
+        apellido:''
+      }
       this.usuarios.forEach(item => {
         
         if (item.nombre==this.nombre && item.pass==this.pass) {
           console.log("Usuario Validado con Nivel "+ item.nivel);
           x=1;
+            datos.nombre=item.username
+            datos.apellido=item.apellidoP
+            datos.rut=item.rut
           if (item.nivel==1) {
             this.navCtrl.navigateForward('/perfil-profesor')  
+            localStorage.setItem("usuario",JSON.stringify(datos))
           }else{
+            localStorage.setItem("usuario",JSON.stringify(datos))
             this.navCtrl.navigateForward('/perfil-alumno')  
           }          
         }

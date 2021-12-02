@@ -9,7 +9,8 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./reestablecer-pass.page.scss'],
 })
 export class ReestablecerPassPage implements OnInit {
-  public email:string = "";
+  usuario:string;
+  email:string;
   constructor(public alertController: AlertController, private router: Router,private navCtrl : NavController) { }
 
   ngOnInit() {
@@ -19,20 +20,16 @@ export class ReestablecerPassPage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Atención',
-      message: 'Se le enviará un correo a la dirección email introducida anteriormente, está seguro(a) que es: holahola123@gmail.com ?',
+      message: 'Se le enviará un correo de verificacion a la siguiente direccion ' +this.email+ ' ? ',
       buttons: [
         {
-          text: 'Si',
+          text: 'Aceptar',
           handler: (dis) => {
-            console.log();
-
             this.mensajeAlerta2();
           }
         }, {
-          text: 'No',
-          role: 'cancel',
+          text: 'Cancelar',
           handler: () => {
-            console.log();
           }
         }
       ]

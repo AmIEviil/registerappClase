@@ -6,6 +6,7 @@ import { ActionSheetController } from '@ionic/angular';
 import {AsignaturasService } from  '../../services/asignaturas.service';
 interface ramo {
   id?: string;
+  idRamo:string;
   horario: string;
   nombre: string;
   sala: string;
@@ -22,14 +23,18 @@ export class AsigDocentePage implements OnInit {
 
   constructor(private router : Router , public actionSheetController: ActionSheetController, public AsignaService : AsignaturasService ) { }
 
-  public ramos : any = [];
+  public ramos : ramo [] = [];
 
   ngOnInit() {
+    
+    this.listadoAsignaturas()
+  }
+
+  listadoAsignaturas(){
     this.AsignaService.getRamos().subscribe( ramos => {
       ramos.map(ramos =>{
         const data : ramo = ramos.payload.doc.data() as ramo;
         data.id = ramos.payload.doc.id;
-        
         
         this.ramos.push(data);
       })
@@ -54,13 +59,7 @@ export class AsigDocentePage implements OnInit {
         handler: () => {
           this.router.navigate(['/lista']);
         }
-      }, /*{
-        text: 'Favorite',
-        icon: 'heart',
-        handler: () => {
-          console.log('Favorite clicked');
-        }
-      }, */{
+      },{
         text: 'Atras',
         icon: 'arrow-back',
         
@@ -74,10 +73,9 @@ export class AsigDocentePage implements OnInit {
     console.log(role);
   }
 
-  opciones(){
+  opciones(idRamo:string){
+    localStorage.setItem("idRamo",idRamo)
     this.presentActionSheet();
   }
-
-  
 
 }

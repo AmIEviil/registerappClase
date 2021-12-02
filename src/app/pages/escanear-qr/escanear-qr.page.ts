@@ -21,8 +21,10 @@ export class EscanearQRPage implements OnInit {
   }
 
   scannerQR(){
-    this.barcodeScann.scan().then(
-      barcodeData=>{
+    this.barcodeScann.scan().then(barcodeData=>{
+        console.log(barcodeData.text);
+        var datos=JSON.parse(barcodeData.text)
+        datos["rutAlumno"]=JSON.parse(localStorage.getItem("usuario")).rut
         this.mensaje(barcodeData.text)
       }
     )

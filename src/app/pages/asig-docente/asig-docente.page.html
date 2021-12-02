@@ -9,11 +9,11 @@
     <span class="espacio-barra">RegistrAPP</span>Asignaturas
   </mat-toolbar-row>
 </mat-toolbar>
-
 <ion-content>
+<!--
   <div class="ramos">
-    <mat-expansion-panel hideToggle>
-      <mat-expansion-panel-header *ngFor = "let ramo of ramos">
+    <mat-expansion-panel hideToggle *ngFor="let ramo of ramos">
+      <mat-expansion-panel-header >
         <mat-panel-title>
           {{ramo.nombre}}
         </mat-panel-title>
@@ -24,4 +24,16 @@
       <p (click)="opciones()">Opciones</p>
     </mat-expansion-panel>
   </div>
+ --> 
+  <div class="ramos">
+  <ion-card *ngFor="let ramo of ramos">
+    <ion-card-header>
+      <ion-card-subtitle> {{ramo.sigla}}-{{ramo.seccion}}</ion-card-subtitle>
+      <ion-card-title> {{ramo.nombre}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button (click)="opciones(ramo.idRamo)" class="op">Opciones</ion-button>
+    </ion-card-content>
+  </ion-card>
+</div>
 </ion-content>

@@ -33,12 +33,12 @@
   <form class="formulario-ingreso">
     <mat-form-field class="cajas-input" appearance="fill">
       <mat-label>Usuario</mat-label>
-      <input matInput placeholder="" value="">
+      <input [(ngModel)]="usuario" [ngModelOptions]="{standalone: true}" matInput placeholder="" value="">
     </mat-form-field>
 
     <mat-form-field class="cajas-input" appearance="fill">
       <mat-label>Correo Electronico</mat-label>
-      <input matInput placeholder="" value="">
+      <input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" matInput placeholder="" value="">
     </mat-form-field>
 
     
